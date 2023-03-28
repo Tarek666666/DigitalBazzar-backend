@@ -15,7 +15,10 @@ import cors from 'cors';
 dotenv.config({ path: '.env' });
 createDatabase();
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: 'https://digital-bazzar.netlify.app',
+    credentials: true 
+  }));
 
 
 app.use(cookieParser())
