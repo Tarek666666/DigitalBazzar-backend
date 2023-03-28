@@ -7,10 +7,15 @@ import productsRouter from "./routes/productsRoutes.js";
 import cookieParser from 'cookie-parser'
 import isLoggedin from "./middleware/isLoggedin.js";
 import stripeRouter from './routes/stripeRoutes.js'
+import cors from 'cors';
+
+
+
 
 dotenv.config({ path: '.env' });
 createDatabase();
 const app = express();
+app.use(cors());
 
 
 app.use(cookieParser())
