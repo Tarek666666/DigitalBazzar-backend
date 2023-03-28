@@ -28,6 +28,7 @@ userRouter.post("/signin", async (req, res, next) => {
                 // if verification is not completed yet , send the message in res ===> in frontend the res will be handled and redirect user to login page
                 res.clearCookie("token");
                 res.clearCookie("loggedIn");
+                res.cookie("loggedIn", false, { maxAge: 900000, secure: true , sameSite: 'strict'});
                 res.json({ msg: "Account is not verified yet, check your email", success: false });
             }
         } else {
