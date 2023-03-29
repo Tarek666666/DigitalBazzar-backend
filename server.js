@@ -17,7 +17,7 @@ createDatabase();
 const app = express();
 app.use(cookieParser())
 app.use(cors({
-    origin: 'https://digital-bazzar-backend.herokuapp.com',
+    origin: ['https://digital-bazzar.netlify.app' ,  'https://digital-bazzar-backend.herokuapp.com'],
     credentials: true 
   }));
 
