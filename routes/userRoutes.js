@@ -56,7 +56,7 @@ userRouter.post("/signup", async (req, res, next) => {
     if (isRegistered) {
         res.json({
             status: {
-                msg: "email is already registered , did you forget your password ?",
+                msg: "email is already registered , did you forget your password ??",
                 success: false,
                 body: {},
             },
