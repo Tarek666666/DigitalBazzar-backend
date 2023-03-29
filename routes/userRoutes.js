@@ -34,6 +34,7 @@ userRouter.post("/signin", async (req, res, next) => {
         } else {
             res.clearCookie("token");
             res.clearCookie("loggedIn");
+            res.cookie("loggedIn", false, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none'});
             res.json({ msg: "Wrong email or password", success: false });
         }
     } else {
@@ -44,8 +45,8 @@ userRouter.post("/signin", async (req, res, next) => {
 });
 
 userRouter.post("/signout", async (req, res, next) => {
-    res.clearCookie("token");
-    res.clearCookie("loggedIn");
+    res.cookie("loggedIn", false, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none'});
+    res.cookie("loggedIn", false, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none'});
     res.send(req.user);
 });
 
