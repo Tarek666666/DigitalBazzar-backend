@@ -37,5 +37,5 @@ app.use('/admin' ,  adminRouter)
 
 const port = process.env.PORT || 8080
 app.listen(port , ()=>{
-    console.log('server is running on ' , port )
+    console.log('server is running On ' , port )
 })
