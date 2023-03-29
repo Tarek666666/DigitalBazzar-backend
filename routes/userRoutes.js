@@ -29,6 +29,7 @@ userRouter.post("/signin", async (req, res, next) => {
                 res.clearCookie("token");
                 res.clearCookie("loggedIn");
                 res.cookie("loggedIn", false, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none'});
+                res.cookie("token", 'aaaaaaaadsadas 00100', { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none'});
                 res.json({ msg: "Account is not verified yet, check your email", success: false });
             }
         } else {
