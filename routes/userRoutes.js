@@ -49,7 +49,7 @@ userRouter.post("/signout", async (req, res, next) => {
     res.cookie("loggedIn", false, { expires: '01 Jan 1970 00:00:00 UTC', path:'/' ,  httpOnly: true, secure: true , sameSite: 'none'});
    // res.clearCookie("token");
   //  res.clearCookie("loggedIn");
-   // req.user = {};
+    req.user = {};
     res.status(200).send();
 });
 
