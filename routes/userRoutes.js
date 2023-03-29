@@ -43,8 +43,8 @@ userRouter.post("/signin", async (req, res, next) => {
 });
 
 userRouter.post("/signout", async (req, res, next) => {
-    res.cookie("loggedIn", false, { maxAge: 33000, httpOnly: true, secure: true , sameSite: 'none'});
-    res.cookie("loggedIn", false, { maxAge: 33000, httpOnly: true, secure: true , sameSite: 'none'});
+    res.clearCookie("token");
+    res.clearCookie("loggedIn");
     res.send(req.user);
 });
 
