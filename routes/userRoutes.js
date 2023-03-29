@@ -28,13 +28,11 @@ userRouter.post("/signin", async (req, res, next) => {
                 // if verification is not completed yet , send the message in res ===> in frontend the res will be handled and redirect user to login page
                 res.clearCookie("token");
                 res.clearCookie("loggedIn");
-                res.cookie("loggedIn", false, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none'});
                 res.json({ msg: "Account is not verified yet, check your email", success: false });
             }
         } else {
             res.clearCookie("token");
             res.clearCookie("loggedIn");
-            res.cookie("loggedIn", false, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none'});
             res.json({ msg: "Wrong email or password", success: false });
         }
     } else {
@@ -45,8 +43,8 @@ userRouter.post("/signin", async (req, res, next) => {
 });
 
 userRouter.post("/signout", async (req, res, next) => {
-    res.cookie("loggedIn", false, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none'});
-    res.cookie("loggedIn", false, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none'});
+    res.cookie("loggedIn", false, { maxAge: 33000, httpOnly: true, secure: true , sameSite: 'none'});
+    res.cookie("loggedIn", false, { maxAge: 33000, httpOnly: true, secure: true , sameSite: 'none'});
     res.send(req.user);
 });
 
