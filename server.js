@@ -15,13 +15,13 @@ import cors from 'cors';
 dotenv.config({ path: '.env' });
 createDatabase();
 const app = express();
+app.use(cookieParser())
 app.use(cors({
-    origin: 'https://digital-bazzar.netlify.app',
+    origin: 'https://digital-bazzar.netlify.app , https://localhost:3000',
     credentials: true 
   }));
 
 
-app.use(cookieParser())
 app.use(express.json());
 app.use(stripeRouter)
 //with each request check if user is logged in , get the user info from db => send it with req
