@@ -44,12 +44,8 @@ userRouter.post("/signin", async (req, res, next) => {
 
 userRouter.post("/signout", async (req, res, next) => {
    
-
-    res.cookie("token", jwtToken, { expires: '01 Jan 1970 00:00:00 UTC', path:'/' ,  httpOnly: true, secure: true , sameSite: 'none'});
-    res.cookie("loggedIn", false, { expires: '01 Jan 1970 00:00:00 UTC', path:'/' ,  httpOnly: true, secure: true , sameSite: 'none'});
-   // res.clearCookie("token");
-  //  res.clearCookie("loggedIn");
-    req.user = {};
+    res.clearCookie("token");
+   res.clearCookie("loggedIn");
     res.status(200).send();
 });
 
