@@ -45,7 +45,8 @@ userRouter.post("/signin", async (req, res, next) => {
 userRouter.post("/signout", async (req, res, next) => {
     res.clearCookie("token");
     res.clearCookie("loggedIn");
-    res.send(req.user);
+    req.user = {};
+    res.status(200).send();
 });
 
 userRouter.post("/signup", async (req, res, next) => {
