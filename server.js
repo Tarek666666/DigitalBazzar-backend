@@ -8,6 +8,7 @@ import cookieParser from 'cookie-parser'
 import isLoggedin from "./middleware/isLoggedin.js";
 import stripeRouter from './routes/stripeRoutes.js'
 import cors from 'cors';
+import isAdmin from "./middleware/isAdmin.js";
 
 
 
@@ -44,7 +45,7 @@ app.use(stripeRouter)
 
 app.use('/products' , productsRouter);
 app.use('/user' ,  userRouter)  
-app.use('/admin' ,  adminRouter)
+app.use('/admin' , isAdmin ,  adminRouter)
 
 const port = process.env.PORT || 8080
 app.listen(port , ()=>{
