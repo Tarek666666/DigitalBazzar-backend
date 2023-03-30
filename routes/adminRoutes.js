@@ -95,11 +95,10 @@ adminRouter.get("/dashboard/orders",  async (req, res, next) => {
 adminRouter.get("/dashboard/members",  async (req, res, next) => {
 
 
-    if(req.user){
+    console.log(req.user  , '-------------------++++++++++++++++++')
         const membersInDb = await User.find({})
         res.json({membersInDb})
-    }
-    res.json({})
+  
 });
 
 export default adminRouter;
