@@ -18,6 +18,7 @@ adminRouter.get("/dashboard",  async (req, res, next) => {
 });
 
 adminRouter.post("/dashboard/addnewproduct",  async (req, res, next) => {
+    console.log(req.user  , '----Add new products---------------++++++++++++++++++11')
     try {
         const newProductToAdd = await Product.insertMany({
             name: req.body.name,
@@ -49,6 +50,7 @@ adminRouter.post("/dashboard/deleteproduct", async (req, res, next) => {
 });
 
 adminRouter.get("/dashboard/editproduct/:id",  async (req, res, next) => {
+    console.log(req.user  , '----Edit---------------++++++++++++++++++11')
     try {
         const productToEdit = await Product.findById(req.params.id);
         res.json(productToEdit);
@@ -94,8 +96,7 @@ adminRouter.get("/dashboard/orders",  async (req, res, next) => {
 
 adminRouter.get("/dashboard/members",  async (req, res, next) => {
 
-
-    console.log(req.user  , '-------------------++++++++++++++++++11')
+    console.log(req.user  , '---------MeMber----------++++++++++++++++++11')
         const membersInDb = await User.find({})
         res.json({membersInDb})
   
