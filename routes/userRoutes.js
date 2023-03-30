@@ -18,8 +18,8 @@ userRouter.post("/signin", async (req, res, next) => {
             //in case user exsist and has done the verification via email ====> create jwt and login ===> save token in cookies
             if (userExists.verified === true && isAuth === true) {
                 let jwtToken = await jwtGenerator(userExists._id);
-                res.cookie("token", jwtToken, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none'});
-                res.cookie("loggedIn", true, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none'});
+                res.cookie("token", jwtToken, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none' ,  path: '/', domain: 'https://digital-bazzar.netlify.app'});
+                res.cookie("loggedIn", true, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none' ,  path: '/', domain: 'https://digital-bazzar.netlify.app'});
                 res.json({
                     success: true,
                     token: jwtToken,
@@ -46,8 +46,8 @@ userRouter.post("/signin", async (req, res, next) => {
 userRouter.post("/signout", async (req, res, next) => {
    // res.cookie("loggedIn", false, { expires: 'Thu, 01 Jan 1970 00:00:00 UTC', path: '/' , httpOnly: true, secure: true , sameSite: 'none'});
    // res.cookie("token", jwtToken, { expires: 'Thu, 01 Jan 1970 00:00:00 UTC', path: '/' , httpOnly: true, secure: true , sameSite: 'none'});
-    res.clearCookie("token");
-    res.clearCookie("loggedIn");
+   res.clearCookie('token', {  path: '/', domain: 'https://digital-bazzar.netlify.app' , httpOnly: true, secure: true , sameSite: 'none' });
+    res.clearCookie('loggedIn', {  path: '/', domain: 'https://digital-bazzar.netlify.app' , httpOnly: true, secure: true , sameSite: 'none'});
     res.status(200).send();
 });
 
