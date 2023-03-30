@@ -83,7 +83,7 @@ adminRouter.post("/dashboard/editproduct/:id",  async (req, res, next) => {
 });
 
 
-adminRouter.get("/dashboard/orders", isLoggedin, async (req, res, next) => {
+adminRouter.get("/dashboard/orders",  async (req, res, next) => {
 
     const ordersInDb = await Order.find({})
         .populate('userId' , 'username email' )
@@ -92,7 +92,7 @@ adminRouter.get("/dashboard/orders", isLoggedin, async (req, res, next) => {
     res.json({ordersInDb})
 });
 
-adminRouter.get("/dashboard/members", isLoggedin, async (req, res, next) => {
+adminRouter.get("/dashboard/members",  async (req, res, next) => {
 
     const membersInDb = await User.find({})
     res.json({membersInDb})
