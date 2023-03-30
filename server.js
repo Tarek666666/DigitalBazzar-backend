@@ -33,7 +33,7 @@ app.get('/auth', async (req,res,next)=>{
     res.json(req.user)
     
    }else{
-    res.json({success:false})
+    next()
    }
 })
 
