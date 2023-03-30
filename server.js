@@ -8,9 +8,6 @@ import cookieParser from 'cookie-parser'
 import isLoggedin from "./middleware/isLoggedin.js";
 import stripeRouter from './routes/stripeRoutes.js'
 import cors from 'cors';
-import isAdmin from "./middleware/isAdmin.js";
-
-
 
 
 dotenv.config({ path: '.env' });
@@ -45,7 +42,7 @@ app.use(stripeRouter)
 
 app.use('/products' , productsRouter);
 app.use('/user' ,  userRouter)  
-app.use('/admin' , isAdmin ,  adminRouter)
+app.use('/admin' ,  adminRouter)
 
 const port = process.env.PORT || 8080
 app.listen(port , ()=>{
