@@ -17,7 +17,7 @@ adminRouter.get("/dashboard",  async (req, res, next) => {
     }
 });
 
-adminRouter.post("/dashboard/addnewproduct", isAdmin , async (req, res, next) => {
+adminRouter.post("/dashboard/addnewproduct",  async (req, res, next) => {
     try {
         const newProductToAdd = await Product.insertMany({
             name: req.body.name,
