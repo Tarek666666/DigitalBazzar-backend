@@ -2,6 +2,7 @@ import express from "express";
 import Product from "../models/ProductsModel.js";
 import isLoggedin from "../middleware/isLoggedin.js";
 import userModels  from "../models/UsersModel.js";
+import isAdmin from "../middleware/isAdmin.js";
 const { Order , User } = userModels;
 const adminRouter = express.Router();
 
@@ -16,7 +17,7 @@ adminRouter.get("/dashboard",  async (req, res, next) => {
     }
 });
 
-adminRouter.post("/dashboard/addnewproduct", isLoggedin, async (req, res, next) => {
+adminRouter.post("/dashboard/addnewproduct", isAdmin, async (req, res, next) => {
     try {
         const newProductToAdd = await Product.insertMany({
             name: req.body.name,
@@ -50,7 +51,6 @@ adminRouter.post("/dashboard/deleteproduct", isLoggedin, async (req, res, next) 
 adminRouter.get("/dashboard/editproduct/:id", isLoggedin, async (req, res, next) => {
     try {
         const productToEdit = await Product.findById(req.params.id);
-        console.log(productToEdit)
         res.json(productToEdit);
     } catch (error) {
         res.json(error);
