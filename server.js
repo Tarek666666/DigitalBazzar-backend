@@ -37,7 +37,7 @@ app.get('/auth', async (req,res,next)=>{
     next();
    }
 })
-app.use(stripeRouter)
+app.use('/user' , stripeRouter)
 
 app.use('/products' , productsRouter);
 app.use('/user' ,  userRouter)  
