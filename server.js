@@ -16,11 +16,13 @@ dotenv.config({ path: '.env' });
 createDatabase();
 const app = express();
 
+
+app.use(cookieParser())
 app.use(cors({
     origin: ['https://digital-bazzar.netlify.app' ,  'https://digital-bazzar-backend.herokuapp.com'],
     credentials: true 
   }));
-app.use(cookieParser())
+
 
 app.use(express.json());
 app.use(stripeRouter)
