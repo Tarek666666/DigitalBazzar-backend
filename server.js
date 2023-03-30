@@ -27,7 +27,7 @@ app.use(cors({
 app.use(express.json());
 
 //with each request check if user is logged in , get the user info from db => send it with req
-app.use(isLoggedin);
+//app.use(isLoggedin);
 app.get('/auth', async (req,res,next)=>{
 //when app loads , get the user info , to check if user's role if Admin or not
    if (req.user){

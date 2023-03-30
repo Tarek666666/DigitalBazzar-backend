@@ -5,7 +5,7 @@ import userModels  from "../models/UsersModel.js";
 const { Order , User } = userModels;
 const adminRouter = express.Router();
 
-adminRouter.get("/dashboard",  async (req, res, next) => {
+adminRouter.get("/dashboard", isLoggedin ,  async (req, res, next) => {
     //case loggedin user and role is admin
     if (req.user && req.user.role === 'admin') {
         res.send({ isAuth: true, user: req.user });
