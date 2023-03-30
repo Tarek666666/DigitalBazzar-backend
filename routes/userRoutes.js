@@ -26,28 +26,28 @@ userRouter.post("/signin", async (req, res, next) => {
                 });
             } else {
                 // if verification is not completed yet , send the message in res ===> in frontend the res will be handled and redirect user to login page
-                res.clearCookie("token");
-                res.clearCookie("loggedIn");
+               // res.clearCookie("token");
+              //  res.clearCookie("loggedIn");
                 res.json({ msg: "Account is not verified yet, check your email", success: false });
             }
         } else {
-            res.clearCookie("token");
-            res.clearCookie("loggedIn");
+         //   res.clearCookie("token");
+        //    res.clearCookie("loggedIn");
            
             res.json({ msg: "Wrong email or password", success: false });
         }
     } else {
-        res.clearCookie("token");
-        res.clearCookie("loggedIn");
+      //  res.clearCookie("token");
+     //   res.clearCookie("loggedIn");
         res.json({ msg: "User not found", success: false });
     }
 });
 
 userRouter.post("/signout", async (req, res, next) => {
-    res.cookie("loggedIn", false, { expires: 'Thu, 01 Jan 1970 00:00:00 UTC', path: '/' , httpOnly: true, secure: true , sameSite: 'none'});
-    res.cookie("token", jwtToken, { expires: 'Thu, 01 Jan 1970 00:00:00 UTC', path: '/' , httpOnly: true, secure: true , sameSite: 'none'});
-   res.clearCookie("token");
- res.clearCookie("loggedIn");
+   // res.cookie("loggedIn", false, { expires: 'Thu, 01 Jan 1970 00:00:00 UTC', path: '/' , httpOnly: true, secure: true , sameSite: 'none'});
+   // res.cookie("token", jwtToken, { expires: 'Thu, 01 Jan 1970 00:00:00 UTC', path: '/' , httpOnly: true, secure: true , sameSite: 'none'});
+    res.clearCookie("token");
+    res.clearCookie("loggedIn");
     res.status(200).send();
 });
 
