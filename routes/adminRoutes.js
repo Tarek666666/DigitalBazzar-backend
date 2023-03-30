@@ -31,7 +31,7 @@ adminRouter.post("/dashboard/addnewproduct",  async (req, res, next) => {
             featured: req.body.featured,
             createdBy: req.user.username,
         });
-        res.json({ newProductToAdd, msg: "product added!" });
+        res.json({ newProductToAdd, msg: "product added" });
     } catch (error) {
         res.json({ error });
     }
