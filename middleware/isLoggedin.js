@@ -12,10 +12,13 @@ const isLoggedin = async (req, res, next) => {
         if(user){
             const loggedUser = await User.findById(user.id);
             req.user = loggedUser
+            next()
         }else{
             res.redirect('/')
         }
+    }else{
+        next()
     }
-    next()
+    
   }
 export default isLoggedin;
