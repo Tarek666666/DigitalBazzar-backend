@@ -84,7 +84,7 @@ adminRouter.post("/dashboard/editproduct/:id",  async (req, res, next) => {
 
 
 adminRouter.get("/dashboard/orders",  async (req, res, next) => {
-
+    console.log(req.user  , '----ORDEEEEEEER---------------++++++++++++++++++11')
     const ordersInDb = await Order.find({})
         .populate('userId' , 'username email' )
         .populate('order.items.productId' , 'name brand price' )
@@ -95,7 +95,7 @@ adminRouter.get("/dashboard/orders",  async (req, res, next) => {
 adminRouter.get("/dashboard/members",  async (req, res, next) => {
 
 
-    console.log(req.user  , '-------------------++++++++++++++++++')
+    console.log(req.user  , '-------------------++++++++++++++++++11')
         const membersInDb = await User.find({})
         res.json({membersInDb})
   

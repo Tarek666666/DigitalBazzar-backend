@@ -15,7 +15,7 @@ const isLoggedin = async (req, res, next) => {
             req.user = loggedUser
             next()
         }else{
-            res.redirect('/')
+           // res.redirect('/')
         }
     }else{
         next()

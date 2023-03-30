@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(isLoggedin);
 
 app.get('/auth', async (req,res,next)=>{
-//when app loads , get the user info , to check if user's role if Admin or not
+//when app loads , get the user info , to display in frontend components
    if (req.user){
     res.json(req.user)
     
