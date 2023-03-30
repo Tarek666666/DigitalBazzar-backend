@@ -5,7 +5,7 @@ import userModels  from "../models/UsersModel.js";
 const { Order , User } = userModels;
 const adminRouter = express.Router();
 
-adminRouter.get("/dashboard", isLoggedin, async (req, res, next) => {
+adminRouter.get("/dashboard",  async (req, res, next) => {
     //case loggedin user and role is admin
     if (req.user && req.user.role === 'admin') {
         res.send({ isAuth: true, user: req.user });
@@ -15,7 +15,7 @@ adminRouter.get("/dashboard", isLoggedin, async (req, res, next) => {
     }
 });
 
-adminRouter.post("/dashboard/addnewproduct", isLoggedin, async (req, res, next) => {
+adminRouter.post("/dashboard/addnewproduct",  async (req, res, next) => {
     try {
         const newProductToAdd = await Product.insertMany({
             name: req.body.name,
@@ -35,7 +35,7 @@ adminRouter.post("/dashboard/addnewproduct", isLoggedin, async (req, res, next) 
     }
 });
 
-adminRouter.post("/dashboard/deleteproduct", isLoggedin, async (req, res, next) => {
+adminRouter.post("/dashboard/deleteproduct", async (req, res, next) => {
     try {
         await Product.deleteOne({ _id: req.body.id })
             .then((res) => console.log(res))
@@ -46,7 +46,7 @@ adminRouter.post("/dashboard/deleteproduct", isLoggedin, async (req, res, next) 
     }
 });
 
-adminRouter.get("/dashboard/editproduct/:id", isLoggedin, async (req, res, next) => {
+adminRouter.get("/dashboard/editproduct/:id",  async (req, res, next) => {
     try {
         const productToEdit = await Product.findById(req.params.id);
         res.json(productToEdit);
@@ -55,7 +55,7 @@ adminRouter.get("/dashboard/editproduct/:id", isLoggedin, async (req, res, next)
     }
 });
 
-adminRouter.post("/dashboard/editproduct/:id", isLoggedin, async (req, res, next) => {
+adminRouter.post("/dashboard/editproduct/:id",  async (req, res, next) => {
     try {
 
         let doc = await Product.findOneAndUpdate(
@@ -81,7 +81,7 @@ adminRouter.post("/dashboard/editproduct/:id", isLoggedin, async (req, res, next
 });
 
 
-adminRouter.get("/dashboard/orders", isLoggedin, async (req, res, next) => {
+adminRouter.get("/dashboard/orders",  async (req, res, next) => {
 
     const ordersInDb = await Order.find({})
         .populate('userId' , 'username email' )
@@ -90,7 +90,7 @@ adminRouter.get("/dashboard/orders", isLoggedin, async (req, res, next) => {
     res.json({ordersInDb})
 });
 
-adminRouter.get("/dashboard/members", isLoggedin, async (req, res, next) => {
+adminRouter.get("/dashboard/members",  async (req, res, next) => {
 
     const membersInDb = await User.find({})
     res.json({membersInDb})
