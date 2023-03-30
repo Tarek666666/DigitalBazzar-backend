@@ -7,7 +7,7 @@ const isAdmin = async (req, res, next) => {
             next()
         } else {
             //case unknown user
-            res.redirect('/')
+           
         }
     
   }
