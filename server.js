@@ -28,8 +28,13 @@ app.use(stripeRouter)
 app.use(isLoggedin);
 app.get('/auth', async (req,res,next)=>{
 //when app loads , get the user info , to check if user's role if Admin or not
+   if (req.user){
     res.json(req.user)
     next();
+   }else{
+    next();
+   }
+    
 })
 app.use('/products' , productsRouter);
 app.use('/user' ,  userRouter)  
