@@ -50,6 +50,7 @@ adminRouter.post("/dashboard/deleteproduct", isLoggedin, async (req, res, next) 
 adminRouter.get("/dashboard/editproduct/:id", isLoggedin, async (req, res, next) => {
     try {
         const productToEdit = await Product.findById(req.params.id);
+        console.log(productToEdit)
         res.json(productToEdit);
     } catch (error) {
         res.json(error);
