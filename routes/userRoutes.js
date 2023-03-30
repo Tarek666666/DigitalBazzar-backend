@@ -48,8 +48,8 @@ userRouter.post("/signin", async (req, res, next) => {
 userRouter.post("/signout", async (req, res, next) => {
    // res.cookie("loggedIn", false, { expires: 'Thu, 01 Jan 1970 00:00:00 UTC', path: '/' , httpOnly: true, secure: true , sameSite: 'none'});
    // res.cookie("token", jwtToken, { expires: 'Thu, 01 Jan 1970 00:00:00 UTC', path: '/' , httpOnly: true, secure: true , sameSite: 'none'});
-   res.clearCookie('token', {  path: '/', domain: 'https://digital-bazzar.netlify.app' , httpOnly: true, secure: true , sameSite: 'none' });
-    res.clearCookie('loggedIn', {  path: '/', domain: 'https://digital-bazzar.netlify.app' , httpOnly: true, secure: true , sameSite: 'none'});
+  // res.clearCookie('token', {  path: '/', domain: 'https://digital-bazzar.netlify.app' , httpOnly: true, secure: true , sameSite: 'none' });
+   // res.clearCookie('loggedIn', {  path: '/', domain: 'https://digital-bazzar.netlify.app' , httpOnly: true, secure: true , sameSite: 'none'});
     res.status(200).send();
 });
 
