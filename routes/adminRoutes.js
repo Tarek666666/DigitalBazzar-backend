@@ -57,7 +57,7 @@ adminRouter.get("/dashboard/editproduct/:id",  async (req, res, next) => {
     }
 });
 
-adminRouter.post("/dashboard/editproduct/:id", isLoggedin, async (req, res, next) => {
+adminRouter.post("/dashboard/editproduct/:id",  async (req, res, next) => {
     try {
 
         let doc = await Product.findOneAndUpdate(
