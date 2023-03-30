@@ -94,8 +94,12 @@ adminRouter.get("/dashboard/orders",  async (req, res, next) => {
 
 adminRouter.get("/dashboard/members",  async (req, res, next) => {
 
-    const membersInDb = await User.find({})
-    res.json({membersInDb})
+
+    if(req.user){
+        const membersInDb = await User.find({})
+        res.json({membersInDb})
+    }
+    res.json({})
 });
 
 export default adminRouter;
