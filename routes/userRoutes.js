@@ -18,8 +18,10 @@ userRouter.post("/signin", async (req, res, next) => {
             //in case user exsist and has done the verification via email ====> create jwt and login ===> save token in cookies
             if (userExists.verified === true && isAuth === true) {
                 let jwtToken = await jwtGenerator(userExists._id);
-                res.cookie("token", jwtToken, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none' ,  path: '/', domain: 'https://digital-bazzar.netlify.app'});
+                
                 res.cookie("loggedIn", true, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none' ,  path: '/', domain: 'https://digital-bazzar.netlify.app'});
+                res.cookie("token", jwtToken, { maxAge: 900000, httpOnly: true, secure: true , sameSite: 'none' ,  path: '/', domain: 'https://digital-bazzar.netlify.app'});
+              
                 res.json({
                     success: true,
                     token: jwtToken,
