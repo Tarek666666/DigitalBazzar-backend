@@ -36,7 +36,7 @@ userRouter.post("/signin", async (req, res, next) => {
          //   res.clearCookie("token");
         //    res.clearCookie("loggedIn");
            
-            res.json({ msg: "Wrong email or password", success: false });
+            res.json({ msg: "Wrong email or passWord", success: false });
         }
     } else {
       //  res.clearCookie("token");
