@@ -9,10 +9,10 @@ adminRouter.get("/dashboard",  async (req, res, next) => {
     //case loggedin user and role is admin
     console.log(req.user , req.user.role , '------------------>>>>>>>>>>>>>')
     if (req.user && req.user.role === 'admin') {
-        res.send({ isAuth: true, user: req.user });
+        res.json({ isAuth: true, user: req.user });
     } else {
         //case unknown user
-        res.send({ isAuth: false });
+        res.json({ isAuth: false });
     }
 });
 
