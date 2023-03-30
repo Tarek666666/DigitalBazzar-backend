@@ -34,7 +34,7 @@ app.get('/auth', async (req,res,next)=>{
     res.json(req.user)
     next();
    }else{
-    res.status(200).send()
+    res.json({})
     next();
    }
 })
