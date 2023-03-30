@@ -48,7 +48,7 @@ adminRouter.post("/dashboard/deleteproduct", isLoggedin, async (req, res, next) 
     }
 });
 
-adminRouter.get("/dashboard/editproduct/:id", isLoggedin, async (req, res, next) => {
+adminRouter.get("/dashboard/editproduct/:id", isAdmin, async (req, res, next) => {
     try {
         const productToEdit = await Product.findById(req.params.id);
         res.json(productToEdit);
