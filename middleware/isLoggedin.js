@@ -9,11 +9,9 @@ const isLoggedin = async (req, res, next) => {
     if(req.cookies.loggedIn){
         const  token  = req.cookies.token;
         const user = await jwt.verify(token, 'secret');
-        console.log('useeeeeeeer from loggedin middleware =========>' , user)
+     
         if(user){
             const loggedUser = await User.findById(user.id);
-
-            console.log('useeeeeeeer from the logged from database middleware =========>' , loggedUser)
             req.user = loggedUser
             next()
         }else{
