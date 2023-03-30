@@ -9,11 +9,8 @@ const  sendEmail  = async(email,subject,text)=>{
               type: 'OAuth2',
               user: process.env.USER,
               pass: process.env.GMAIL_PASS,
-              clientId: '432979864233-6788306bf87arfcjcsgi5n0h844647oq.apps.googleusercontent.com',
-             
-
-
-              clientSecret: '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',
+              clientId: '564195426438-80kkbnm061jb3pq9r0dpjat0eqamkug4.apps.googleusercontent.com',
+              clientSecret: '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',
               refreshToken: process.env.GMAIL_RFRESHTOKEN
             }
           });
