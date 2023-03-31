@@ -1,8 +1,6 @@
 import express from "express";
 import Product from "../models/ProductsModel.js";
-import isLoggedin from "../middleware/isLoggedin.js";
 import userModels  from "../models/UsersModel.js";
-import isAdmin from "../middleware/isAdmin.js";
 const { Order , User } = userModels;
 const adminRouter = express.Router();
 
@@ -22,7 +20,7 @@ adminRouter.get("/dashboard",  async (req, res, next) => {
 });
 
 adminRouter.post("/dashboard/addnewproduct",  async (req, res, next) => {
-    console.log(req.user  , '----Add new products---------------++++++++++++++++++11')
+   
     try {
         const newProductToAdd = await Product.insertMany({
             name: req.body.name,
@@ -54,7 +52,7 @@ adminRouter.post("/dashboard/deleteproduct", async (req, res, next) => {
 });
 
 adminRouter.get("/dashboard/editproduct/:id",  async (req, res, next) => {
-    console.log(req.user  , '----Edit---------------++++++++++++++++++11')
+    
     try {
         const productToEdit = await Product.findById(req.params.id);
         res.json(productToEdit);
@@ -99,21 +97,15 @@ adminRouter.get("/dashboard/orders",  async (req, res, next) => {
         res.json({ordersInDb})
 
    }else{
-    
-    console.log(req.user  , '----ORDEEEEEEER---------------++++++++++++++++++11')
     res.json({success:false})
    }
  }else{
-    console.log(req.user  , '----ORDEEEEEEER---------------++++++++++++++++++11')
     res.json({success:false})
  }
    
 });
 
 adminRouter.get("/dashboard/members",  async (req, res, next) => {
-
-   
-   
 
         if(req.user){
             if(req.user.role === 'admin'){
@@ -126,7 +118,6 @@ adminRouter.get("/dashboard/members",  async (req, res, next) => {
          }else{
             res.json({success:false})
          }
-           
   
 });
 
