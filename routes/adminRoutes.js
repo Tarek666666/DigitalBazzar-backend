@@ -8,13 +8,17 @@ const adminRouter = express.Router();
 
 adminRouter.get("/dashboard",  async (req, res, next) => {
     //case loggedin user and role is admin
-    console.log(req.user , req.user.role , '-------------->>>>>>>>')
+   if(req.user){
+    
     if (req.user && req.user.role === 'admin') {
         res.json({ isAuth: true, user: req.user });
     } else {
         //case unknown user
         res.json({ isAuth: false });
     }
+   }else{
+        res.json({ isAuth: false });
+   }
 });
 
 adminRouter.post("/dashboard/addnewproduct",  async (req, res, next) => {
