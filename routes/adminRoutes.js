@@ -110,11 +110,23 @@ adminRouter.get("/dashboard/orders",  async (req, res, next) => {
    
 });
 
-adminRouter.post("/dashboard/members",  async (req, res, next) => {
+adminRouter.get("/dashboard/members",  async (req, res, next) => {
 
-    console.log(req.user  , '---------MeMber----------++++++++++++++++++11')
-        const membersInDb = await User.find({})
-        res.json({membersInDb})
+   
+   
+
+        if(req.user){
+            if(req.user.role === 'admin'){
+                const membersInDb = await User.find({})
+                res.json({membersInDb})
+           }else{
+        
+            res.json({success:false})
+           }
+         }else{
+            res.json({success:false})
+         }
+           
   
 });
 
