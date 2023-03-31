@@ -86,7 +86,8 @@ adminRouter.post("/dashboard/editproduct/:id",  async (req, res, next) => {
 
 
 adminRouter.get("/dashboard/orders",  async (req, res, next) => {
-   if(req.user.role === 'admin'){
+ if(req.user){
+    if(req.user.role === 'admin'){
         const ordersInDb = await Order.find({})
         .populate('userId' , 'username email' )
         .populate('order.items.productId' , 'name brand price' )
@@ -98,6 +99,10 @@ adminRouter.get("/dashboard/orders",  async (req, res, next) => {
     console.log(req.user  , '----ORDEEEEEEER---------------++++++++++++++++++11')
     res.json({success:false})
    }
+ }else{
+    console.log(req.user  , '----ORDEEEEEEER---------------++++++++++++++++++11')
+    res.json({success:false})
+ }
    
 });
 
