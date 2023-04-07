@@ -28,3 +28,6 @@ DigitalBazzar was built using the following technologies:
 - MongoDB for the database
 - Mongoose to define relations and operate on the database
 - Stripe for payments
+
+## Demo:
+A deployed version of the app can be tested via this <link href="https://digital-bazzar.netlify.app/" />.
