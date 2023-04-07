@@ -1,4 +1,4 @@
-import Product from "../models/ProductsModel"
+
 
 
 // functions to control the products routes
@@ -18,5 +18,5 @@ async function getProductDetails  (req, res){
 
 
 
-export {getAllProducts , getProductDetails};
+export {getAllProducts , getProductDetails };
 
