@@ -30,7 +30,7 @@ DigitalBazzar was built using the following technologies:
 - Stripe for payments
 
 ## Demo:
-A deployed version of the app can be tested via this [Link to deployed app]([https://yourappurl.com](https://digital-bazzar.netlify.app/)) .
+A deployed version of the app can be tested via this [Link to deployed app]([https://digital-bazzar.netlify.app/]) .
 You can use these credentials to log in as an admin and explore the admin features. Additionally, new accounts can be created and verified.
 
 | Email  | Password  |
