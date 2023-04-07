@@ -47,5 +47,9 @@ You can use these credentials to log in as an admin and explore the admin featur
 
 - Improving the design of the featured collection on the homepage using the Three.js library.
 
-#Note:
+## Note:
 The app uses cookies to store authentication tokens, which are deleted when the user logs out. The token has a lifespan of 15 minutes, after which the user will need to log in again for continued access.
+
+
+## Screenshots:
+![Screenshot of DigitalBazzar homepage]([./images/homepage.png](https://github.com/Tarek666666/DigitalBazzar-backend/blob/master/screenshots/home.png))
