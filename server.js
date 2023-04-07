@@ -15,18 +15,20 @@ createDatabase();
 const app = express();
 
 
-app.use(cookieParser())
-app.use(cors({
-    origin: ['https://digital-bazzar.netlify.app' ,  'https://digital-bazzar-backend.herokuapp.com'],
-    credentials: true 
-  }));
+// Use the cookie-parser middleware to parse cookies from incoming requests
+app.use(cookieParser());
 
+// Use the cors middleware to enable cross-origin resource sharing (CORS) for the specified origins and with credentials
+app.use(cors({
+    // Allow requests from these origins
+    origin: ['https://digital-bazzar.netlify.app' ,  'https://digital-bazzar-backend.herokuapp.com'],
+    // Enable sending and receiving cookies across domains
+    credentials: true 
+}));
 
 app.use(express.json());
-
 //with each request check if user is logged in , get the user info from db => send it with req
 app.use(isLoggedin);
-
 app.get('/auth', async (req,res,next)=>{
 //when app loads , get the user info , to display in frontend components
    if (req.user){
@@ -37,9 +39,7 @@ app.get('/auth', async (req,res,next)=>{
    }
 })
 
-
 app.use(stripeRouter)
-
 app.use('/products' , productsRouter);
 app.use('/user' ,  userRouter)  
 app.use('/admin' ,  adminRouter)

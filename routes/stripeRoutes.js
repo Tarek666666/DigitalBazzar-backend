@@ -2,7 +2,7 @@ import express from "express";
 import Stripe from "stripe";
 const stripeRouter = express.Router();
 
-stripeRouter.post("/create-checkout-session", async (req, res, next) => {
+stripeRouter.post("/create-checkout-session", async (req, res) => {
         const stripe = Stripe(process.env.STRIPE_TEST_KEY);
         const session = await stripe.checkout.sessions.create({
             line_items: req.body.items.map((item) => {

@@ -4,6 +4,8 @@ import userModels  from "../models/UsersModel.js";
 const { Order , User } = userModels;
 const adminRouter = express.Router();
 
+
+// ProtectedRoute // this api will check if the user is loggedin & role === admin and send res back to frondend
 adminRouter.get("/dashboard",  async (req, res, next) => {
     //case loggedin user and role is admin
    if(req.user){
@@ -19,6 +21,8 @@ adminRouter.get("/dashboard",  async (req, res, next) => {
    }
 });
 
+
+// the page where admin creates a new product
 adminRouter.post("/dashboard/addnewproduct",  async (req, res, next) => {
    
     try {
@@ -39,7 +43,7 @@ adminRouter.post("/dashboard/addnewproduct",  async (req, res, next) => {
         res.json({ error });
     }
 });
-
+// delete product
 adminRouter.post("/dashboard/deleteproduct", async (req, res, next) => {
     try {
         await Product.deleteOne({ _id: req.body.id })
@@ -50,7 +54,7 @@ adminRouter.post("/dashboard/deleteproduct", async (req, res, next) => {
         res.json({ error });
     }
 });
-
+// get the selected product to update ==> display product info
 adminRouter.get("/dashboard/editproduct/:id",  async (req, res, next) => {
     
     try {
@@ -61,6 +65,7 @@ adminRouter.get("/dashboard/editproduct/:id",  async (req, res, next) => {
     }
 });
 
+// update product selected in DB
 adminRouter.post("/dashboard/editproduct/:id",  async (req, res, next) => {
     try {
 
@@ -86,8 +91,10 @@ adminRouter.post("/dashboard/editproduct/:id",  async (req, res, next) => {
     }
 });
 
-
+// get all orders in db
 adminRouter.get("/dashboard/orders",  async (req, res, next) => {
+
+  // to prevent user requesting the /dashboard/orders url while he is not admin  
  if(req.user){
     if(req.user.role === 'admin'){
         const ordersInDb = await Order.find({})
@@ -104,9 +111,9 @@ adminRouter.get("/dashboard/orders",  async (req, res, next) => {
  }
    
 });
-
+// get all memebers in db
 adminRouter.get("/dashboard/members",  async (req, res, next) => {
-
+// to prevent user requesting the /dashboard/orders url while he is not admin  
         if(req.user){
             if(req.user.role === 'admin'){
                 const membersInDb = await User.find({})

@@ -8,6 +8,7 @@ import { sendEmail } from "../util/sendEmail.js";
 const { User, Order, Token } = userModels;
 const userRouter = express.Router();
 
+// login
 userRouter.post("/signin", async (req, res, next) => {
     const { email, password } = req.body;
     const userExists = await User.findOne({ email: email });
@@ -28,26 +29,19 @@ userRouter.post("/signin", async (req, res, next) => {
                 });
             } else {
                 // if verification is not completed yet , send the message in res ===> in frontend the res will be handled and redirect user to login page
-               // res.clearCookie("token");
-              //  res.clearCookie("loggedIn");
                 res.json({ msg: "Account is not verified yet, check your email", success: false });
             }
         } else {
-         //   res.clearCookie("token");
-        //    res.clearCookie("loggedIn");
-           
             res.json({ msg: "Wrong email or passWord", success: false });
         }
     } else {
-      //  res.clearCookie("token");
-     //   res.clearCookie("loggedIn");
         res.json({ msg: "User not found", success: false });
     }
 });
 
-userRouter.post("/signout", async (req, res, next) => {
-   //res.cookie("loggedIn", false, { expires: 'Thu, 01 Jan 1970 00:00:00 UTC', path: '/' , httpOnly: true, secure: true , sameSite: 'none'});
-   // res.cookie("token", jwtToken, { expires: 'Thu, 01 Jan 1970 00:00:00 UTC', path: '/' , httpOnly: true, secure: true , sameSite: 'none'});
+//logout
+userRouter.post("/signout", async (req, res) => {
+  //clear cookies when user signs out
     res.clearCookie('token', {  httpOnly: true, secure: true , sameSite: 'None' });
     res.clearCookie('loggedIn', {  httpOnly: true, secure: true , sameSite: 'None'});
     res.status(200).send();
