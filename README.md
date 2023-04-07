@@ -32,13 +32,14 @@ DigitalBazzar was built using the following technologies:
 
 ## Demo:
 Online Deployment of this project is available at:    [Digital-Bazzar](https://digital-bazzar.netlify.app/) <br>
-You can use these credentials to log in as an admin and explore the admin features. Additionally, new accounts can be created and verified.
+
+- You can use these credentials to log in as an admin and explore the admin features. Additionally, new accounts can be created and verified.
 
 | Email  | Password  |
 |-----------|-----------|
 | admin | 123123123 |
 
-To test checkout and stripe getway the following creditcard can be used
+- To test checkout and stripe getway the following creditcard can be used to place order and fulfill a payment
 | Card Number             | End    | CVC |
 |------------------------|--------|-----|
 | 4242 4242 4242 4242     | 11-33  | 333 |
