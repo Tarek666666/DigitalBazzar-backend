@@ -38,6 +38,13 @@ You can use these credentials to log in as an admin and explore the admin featur
 |-----------|-----------|
 | admin | 123123123 |
 
+To test checkout and stripe getway the following creditcard can be used
+<div style="background-color: yellow; padding: 10px;">
+       | cardnumber  | end  | CVC |
+     |-----------|-----------|-------|
+     | 4242 4242 4242 4242 | 11-33 |333|
+</div>
+
 
 
 ## Future Plans and Improvements for DigitalBazzar:
