@@ -1,16 +1,30 @@
 # Digital Bazzar Commerce backend
 
+DigitalBazzar is a full-stack e-commerce application built to simulate real-world functionality. This app has almost all the important features of a real e-commerce site. The application was built over a period of 6 weeks to test the developer's knowledge and skills in various technologies.
 
-DigitalBazzar is a full-stack ecommerce application that provides a complete online shopping experience. The application is built using modern web technologies and is designed to mimic real-world ecommerce functionality.
+##Functionality
+DigitalBazzar provides a user-friendly interface and several features for users, including:
 
-## Backend Repository
+Add product to cart
+Filter or search products by brand
+Delete product or increase quantity
+Register for new account and verify email
+Login and checkout using Stripe payment gateway
+Resend verification email if needed
+Protected admin dashboard to manage orders, members, and products
+Admin can add, update, and delete products
+Admin can make products featured to display on homepage
+##Technologies Used
+DigitalBazzar was built using the following technologies:
 
-The backend repository is responsible for handling all the server-side logic and database management required to power the application. Specifically:
-
-- Admin dashboard: allows admins to manage products and orders, and view customer information.
-- Regular users: can browse products, add to cart.
-- Users must register and verify email before logging in.
-- User must login before checkout with Stripe payment gateway
-- The backend provides APIs and server-side functionality for the frontend to interact with the database and provide a user-friendly interface.
+Node.js with Express for the backend
+Axios for fetching data and supporting older browsers
+Bcrypt to encrypt passwords
+Cookie parser to read cookies
+JSON Web Token to verify tokens for email verification and sign-in
+Nodemailer to send verification links
+MongoDB for the database
+Mongoose to define relations and operate on the database
+Stripe for payments
 
 
