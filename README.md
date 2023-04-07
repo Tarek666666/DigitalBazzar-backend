@@ -46,3 +46,7 @@ You can use these credentials to log in as an admin and explore the admin featur
 - Adding a feature for the admin to upgrade a regular user to an admin. Additionally, I will implement CRUD operations for orders and members within the admin dashboard.
 
 - Improving the design of the featured collection on the homepage using the Three.js library.
+
+
+###Note:
+The app uses cookies to store authentication tokens, which are deleted when the user logs out. The token has a lifespan of 15 minutes, after which the user will need to log in again for continued access.
