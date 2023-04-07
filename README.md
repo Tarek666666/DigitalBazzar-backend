@@ -26,7 +26,7 @@ DigitalBazzar was built using the following technologies:
 - Cookie parser to read cookies
 - JSON Web Token to verify tokens for email verification and sign-in
 - Nodemailer to send verification links
-- ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) for the database
+- MongoDB for the database
 - Mongoose to define relations and operate on the database
 - Stripe for payments
 
