@@ -1,4 +1,4 @@
-
+import Product from '../models/ProductsModel.js' 
 
 
 // functions to control the products routes
