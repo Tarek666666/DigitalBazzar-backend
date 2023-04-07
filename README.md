@@ -30,7 +30,7 @@ DigitalBazzar was built using the following technologies:
 - Stripe for payments
 
 ## Demo:
-Online Deployment of this project is available at:    [Digital-Bazzar](https://digital-bazzar.netlify.app/products)
+Online Deployment of this project is available at:    [Digital-Bazzar](https://digital-bazzar.netlify.app/products) <br>
 You can use these credentials to log in as an admin and explore the admin features. Additionally, new accounts can be created and verified.
 
 | Email  | Password  |
