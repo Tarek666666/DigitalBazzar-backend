@@ -1,19 +1,12 @@
 import express from 'express'
 import Product from '../models/ProductsModel.js'  
+import { getAllProducts , getProductDetails } from '../controllers/productsController.js';
 
 const productsRouter = express.Router();
 
-productsRouter.get('/allproducts', async (req, res , next)=>{
+productsRouter.get('/allproducts', getAllProducts)
 
-    const importedProducts = await Product.find({})
-    res.send(importedProducts)
-})
-
-productsRouter.get('/productdetails/:id' ,  async (req, res)=>{
-   
-    const selectedProduct = await Product.findById(req.params.id)
-    res.json(selectedProduct)
-})
+productsRouter.get('/productdetails/:id' ,  getProductDetails)
 
 export default productsRouter;
 
