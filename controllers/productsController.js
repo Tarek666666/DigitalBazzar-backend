@@ -1,4 +1,4 @@
-import Product from '../models/ProductsModel'
+import Product from "../models/ProductsModel"
 
 
 // functions to control the products routes
