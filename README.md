@@ -52,4 +52,4 @@ The app uses cookies to store authentication tokens, which are deleted when the 
 
 
 ## Screenshots:
-![Screenshot of DigitalBazzar homepage]([./images/homepage.png](https://github.com/Tarek666666/DigitalBazzar-backend/blob/master/screenshots/home.png))
+![Screenshot of DigitalBazzar homepage](https://github.com/Tarek666666/DigitalBazzar-backend/blob/master/screenshots/home.png)
