@@ -8,6 +8,7 @@ DigitalBazzar provides a user-friendly interface and several features for users,
 
 - Add product to cart
 - Filter or search products by brand
+- Sort By Price ASC/DESC
 - Delete product or increase quantity
 - Register for new account and verify email
 - Login and checkout using Stripe payment gateway
