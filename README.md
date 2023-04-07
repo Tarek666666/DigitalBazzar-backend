@@ -31,3 +31,9 @@ DigitalBazzar was built using the following technologies:
 
 ## Demo:
 A deployed version of the app can be tested via this <link href="https://digital-bazzar.netlify.app/" />.
+You can use these credentials to log in as an admin and explore the admin features. Additionally, new accounts can be created and verified.
+
+| Email  | Password  |
+|-----------|-----------|
+| admin | 123123123 |
+
