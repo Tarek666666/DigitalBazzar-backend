@@ -37,3 +37,11 @@ You can use these credentials to log in as an admin and explore the admin featur
 |-----------|-----------|
 | admin | 123123123 |
 
+
+
+## Future Plans and Improvements for DigitalBazzar:
+- Implementing Stripe webhooks to handle the checkout and order creation process. When a payment is successfully processed, the webhook will send a request to the DigitalBazzar backend. I will create an API to handle this request, and only after receiving it, will the order be created in the database.
+
+- Adding a feature for the admin to upgrade a regular user to an admin. Additionally, I will implement CRUD operations for orders and members within the admin dashboard.
+
+- Improving the design of the featured collection on the homepage using the Three.js library.
