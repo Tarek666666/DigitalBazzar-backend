@@ -85,10 +85,10 @@ userRouter.post("/signup", async (req, res, next) => {
         });
 
         //-------------------------------------
-        const token = await  Token.insertMany({
+        const token = await new Token({
             userId: newUser[0]._id,
             token: verifiyToken,
-        });
+        }).save();
         console.log(token , ' ========================== the token object should has a .token')
        // after regesiter is done , send a verification link to the user email.     
         const  url =  ` Welcome  ${newUser[0].username} ! Please click on the following link to verifiy your account : ${process.env.BASE_URL}/user/${newUser[0]._id}/verify/${token.token}`;
