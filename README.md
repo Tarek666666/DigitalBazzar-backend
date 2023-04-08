@@ -1,6 +1,6 @@
 # DigitalBazzar
 
-DigitalBazzar is a full-stack e-commerce application built to simulate real-world functionality. This app has almost all the important features of a real e-commerce site. The application was built over a period of 6 weeks to test my knowledge and skills in various technologies.
+DigitalBazzar is a full-stack e-commerce application built to simulate real-world functionality. This app has almost all the important features of a real e-commerce site. The application was built over a period of 6 weeks to test my knowledge and skills in various front-end & back-end technologies.
 
 ## Functionality
 
