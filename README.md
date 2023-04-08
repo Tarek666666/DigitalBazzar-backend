@@ -28,7 +28,7 @@ DigitalBazzar was built using the following technologies:
 - Nodemailer to send verification links
 - MongoDB for the database
 - Mongoose to define relations and operate on the database
-- Stripe for payments
+- Stripe for payments /Test mode/
 
 ## Demo:
 Online Deployment of this project is available at:    [Digital-Bazzar](https://digital-bazzar.netlify.app/) <br>
