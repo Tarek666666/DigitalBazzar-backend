@@ -1,13 +1,13 @@
 # DigitalBazzar
 
-DigitalBazzar is a full-stack e-commerce application built to simulate real-world functionality. This app has almost all the important features of a real e-commerce site. The application was built over a period of 6 weeks to test my knowledge and skills in various technologies.
+DigitalBazzar is a full-stack e-commerce application built to simulate real-world functionality. This app has almost all the important features of a real e-commerce site. The application was built over a period of 6 weeks to test my knowledge and skills in various front-end & back-end technologies.
 
 ## Functionality
 
 DigitalBazzar provides a user-friendly interface and several features for users, including:
 
 - Add product to cart
-- Filter or search products by brand
+- Filter & search products by brand
 - Sort By Price ASC/DESC
 - Delete product or increase quantity
 - Register for new account and verify email
@@ -32,11 +32,17 @@ DigitalBazzar was built using the following technologies:
 
 ## Demo:
 Online Deployment of this project is available at:    [Digital-Bazzar](https://digital-bazzar.netlify.app/) <br>
+
 You can use these credentials to log in as an admin and explore the admin features. Additionally, new accounts can be created and verified.
 
 | Email  | Password  |
 |-----------|-----------|
 | admin | 123123123 |
+
+To test checkout and stripe getway the following creditcard can be used to place order and fulfill a payment.
+| Card Number             | End    | CVC |
+|------------------------|--------|-----|
+| 4242 4242 4242 4242     | 11-33  | 333 |
 
 
 
@@ -53,3 +59,4 @@ The app uses cookies to store authentication tokens, which are deleted when the 
 
 ## Screenshots:
 ![Screenshot of DigitalBazzar homepage](https://github.com/Tarek666666/DigitalBazzar-backend/blob/master/screenshots/home.png)
+![Screenshot of DigitalBazzar homepage](https://github.com/Tarek666666/DigitalBazzar-backend/blob/master/screenshots/home-dark.png)
