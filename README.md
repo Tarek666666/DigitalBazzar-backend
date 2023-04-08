@@ -7,7 +7,7 @@ DigitalBazzar is a full-stack e-commerce application built to simulate real-worl
 DigitalBazzar provides a user-friendly interface and several features for users, including:
 
 - Add product to cart
-- Filter or search products by brand
+- Filter & search products by brand
 - Sort By Price ASC/DESC
 - Delete product or increase quantity
 - Register for new account and verify email
